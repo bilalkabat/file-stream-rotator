@@ -28,7 +28,7 @@ export default class AuditManager {
             console.log(`ABOUT TO LOAD auditFilename ${this.config.auditFilename}`)
             let full_path = path.resolve(this.config.auditFilename);
             let savedFile: AuditConfigFile = JSON.parse(fs.readFileSync(full_path, { encoding: 'utf-8' }));
-            console.log(`LOADED auditFilename ${JSON.stringify(savedFile)}`)
+            console.log(`LOADED auditFilename STRINGIFIED `, savedFile)
 
             this.config.files = savedFile.files
         }catch(e: any){
